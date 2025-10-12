@@ -16,15 +16,17 @@ import { Icon } from "astro-icon/components";
     <img
       src={project.primaryImg}
       alt={project.altPrimaryImg}
-      class="rounded-lg"
+      class="hidden rounded-lg md:block"
     />
   </div>
 
-  <div class="rounded-lg border border-gray-200 dark:border-gray-800">
+  <div
+    class="max-w-sm rounded-lg border border-gray-200 md:max-w-none dark:border-gray-800"
+  >
     <img
       src={project.secondaryImg}
       alt={project.altSecondaryImg}
-      class="hidden rounded-lg md:block"
+      class="rounded-lg"
     />
   </div>
   <div class="rounded-lg border border-gray-200 dark:border-gray-800">
