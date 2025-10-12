@@ -7,6 +7,7 @@
   --font-sans: "Inter", "sans-serif";
   --breakpoint-xl: 70rem;
   --color-background: hsl(0, 0%, 100%);
+  /* --color-background: #eeeef4; */
   --color-foreground: 0 0% 0%;
   --color-accent: hsl(203 78% 54%);
   --color-ghost: hsl(214.99 31% 17%);

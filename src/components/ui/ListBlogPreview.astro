@@ -25,7 +25,10 @@ const { data: format_data } = Astro.props;
   </header>
 
   <div class="mt-auto rounded-md border-2 border-gray-300 py-4">
-    <h2 class="text-center text-4xl tracking-tighter" id="content-title">
+    <h2
+      class="max-w-[312px] overflow-hidden px-2 text-center text-4xl tracking-tighter text-ellipsis whitespace-nowrap"
+      id="content-title"
+    >
       {format_data[0].title}
     </h2>
 
