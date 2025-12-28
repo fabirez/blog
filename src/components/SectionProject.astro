@@ -1,34 +1,13 @@
 ---
-import SectionProjectContent from "./ui/SectionProjectContent.astro";
-const projects = [
-  {
-    title: "Color To Palette",
-    stack: [
-      {
-        labelName: "React",
-        iconName: "react-icon",
-      },
-    ],
-    description: "A web app that make you to create a palette from an image",
-    primaryImg: "/images/color-to-palette_primary.png",
-    secondaryImg: "/images/color-to-palette_secondary.png",
-    tertiaryImg: "/images/color-to-palette_tertiary.png",
-    altPrimaryImg: "showing the app interface of the webapp color to palette",
-    altSecondaryImg:
-      "showing the app color to palette when an images is loaded",
-    altTertiaryImg:
-      "showing the app color to palette how the user can export the colors",
-    link: "https://skyc4ffe1ne.github.io/image-to-colors.github.io/",
-  },
-];
+import HeaderProject from "./HeaderProject.astro";
+import BodyProject from "./BodyProject.astro";
+import FooterProject from "./FooterProject.astro";
 ---
 
-<section class="mt-20 flex w-full flex-col md:mt-40 md:items-center">
-  {
-    projects.map((project) => (
-      <div class="flex w-full flex-col gap-0 px-3 not-first:mt-10">
-        <SectionProjectContent project={project} />
-      </div>
-    ))
-  }
+<section class="mt-20 flex w-full max-w-5xl flex-col px-4">
+  <div class="grid w-full grid-cols-[40px_minmax(0,1fr)] gap-y-8">
+    <HeaderProject />
+    <BodyProject />
+    <FooterProject />
+  </div>
 </section>

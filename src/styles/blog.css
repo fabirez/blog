@@ -9,12 +9,12 @@
   --color-para-blog: hsl(220 6% 20%);
   --color-link-blog: hsl(226 71% 40%);
   --color-code-blog: hsl(217 91% 60%);
-
   --color-h-color-1: hsl(14 100% 70%);
   --color-h-color-2: hsl(344 100% 69%);
   --color-h-color-3: hsl(134 100% 70%);
   --color-h-color-4: hsl(74 100% 70%);
   --color-h-color-5: hsl(326 85% 90%);
+  --color-link: hsl(0 0% 5%);
 }
 
 @layer base {
@@ -36,9 +36,11 @@
   @apply text-para-blog bg-background selection:bg-foreground selection:text-background;
 }
 
+
 /*.blog h1 {
   @apply text-foreground my-8 text-[42px] leading-[52px] tracking-tight capitalize;
 }*/
+
 
 .blog h2 {
   @apply text-foreground mb-7 text-[32px] leading-10 tracking-tight capitalize;
@@ -57,7 +59,7 @@
 }
 
 .blog ul {
-  @apply list-disc;
+  @apply list-[square];
 }
 
 .blog ol {
@@ -65,7 +67,11 @@
 }
 
 .blog li {
-  @apply text-xl mt-4;
+  @apply mt-4 text-xl;
+}
+
+.blog .link{ 
+	@apply hover:text-foreground text-sm font-medium mt-0 no-underline text-foreground;
 }
 
 .blog a {
@@ -73,7 +79,7 @@
 }
 
 .blog pre {
-  @apply mb-11 rounded-xl p-5 outline-2 -outline-offset-4 outline-gray-600 relative;
+  @apply relative mb-11 rounded-xl p-5 outline-2 -outline-offset-4 outline-gray-600;
 }
 
 .blog .blogImg {
@@ -81,15 +87,19 @@
 }
 
 .btnCopy {
-  @apply bg-white absolute top-2 right-2 rounded-md hidden z-50 text-black text-sm px-3 py-0.5 cursor-pointer tracking-tight;
+  @apply absolute top-2 right-2 z-50 hidden cursor-pointer rounded-md bg-white px-3 py-0.5 text-sm tracking-tight text-black;
 }
 
 .visible .btnCopy {
   @apply block;
 }
 
+
+.blog pre {
+  @apply max-w-[1024px];
+}
 .blog code {
-  @apply text-blue-400;
+  @apply border-foreground/60 p-1 text-lg/6 text-blue-400;
 }
 
 .h_color1 {
