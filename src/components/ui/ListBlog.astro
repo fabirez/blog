@@ -3,22 +3,23 @@ const { post } = Astro.props;
 ---
 
 <a
-  class="post-list border-foreground grid cursor-pointer auto-cols-max grid-flow-col place-items-center gap-x-12 border-b"
+	class="post-list border-foreground grid cursor-pointer grid-cols-[auto_minmax(500px,1fr)_150px_minmax(0,auto)] border-b gap-x-8"
   href={post.url}
   data-title={post.title}
 >
   <p class="font-mono text-xs/6">{post.pubDate}</p>
 
   <h2
-    class="splitTitle min-w-xl overflow-hidden text-4xl tracking-tighter text-ellipsis whitespace-nowrap group-hover:underline"
+    class="overflow-hidden text-4xl tracking-tighter whitespace-nowrap group-hover:underline text-ellipsis relative"
   >
     {post.title}
+   <svg class="absolute top-0 right-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
   </h2>
 
   <p
-    class="min-w-[150px] font-mono text-sm font-medium tracking-wide uppercase"
+		class="min-w-[150px] text-[11px] font-medium tracking-wide uppercase text-gray-800/70"
   >
-    {post.genre}
+    #{post.genre}
   </p>
 
 	<span title="<CR>">

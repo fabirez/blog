@@ -1,0 +1,35 @@
+---
+const { post } = Astro.props;
+import HeaderListBlog from "./HeaderListBlog.astro";
+import BodyListBlog from "./BodyListBlog.astro";
+---
+
+<div
+  class="border-foreground flex cursor-pointer flex-col border-b"
+  data-title={post.title}
+  data-description={post.description}
+  data-image-url={post.image.url}
+  data-image-alt={post.image.alt}
+>
+
+  <header class="accordion">
+		<HeaderListBlog post={post}/>
+  </header>
+
+  <div
+    class="hidden opacity-100 transition-opacity duration-300 ease-in-out starting:opacity-0 [.open_&]:block"
+  >
+		<BodyListBlog post={post} />
+	</div>
+</div>
+
+<script>
+  let accordions = document.querySelectorAll(".accordion");
+
+  accordions.forEach((acc) => {
+    acc.addEventListener("click", function () {
+      acc.parentElement.classList.toggle("open");
+    });
+  });
+</script>
+

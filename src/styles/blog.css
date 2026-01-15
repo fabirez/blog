@@ -71,7 +71,7 @@
 }
 
 .blog .link{ 
-	@apply hover:text-foreground text-sm font-medium mt-0 no-underline text-foreground;
+	@apply hover:text-foreground mt-0 no-underline text-foreground text-sm;
 }
 
 .blog a {
@@ -121,7 +121,11 @@
 .h_color5 {
   @apply bg-h-color-5/30 dark:bg-h-color-5/20;
 }
+/**/
+/* .h1_clamp { */
+/*   font-size: clamp(3rem, 1.3673rem + 8.1633vw, 8rem); */
+/* } */
 
-.h1_clamp {
-  font-size: clamp(3rem, 1.3673rem + 8.1633vw, 8rem);
-}
+/* .h1_clamp { */
+/*   font-size: clamp(3rem, 1.3673rem + 8.1633vw, 8rem); */
+/* } */

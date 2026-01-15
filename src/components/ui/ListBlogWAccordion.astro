@@ -13,7 +13,7 @@ import { Icon } from "astro-icon/components";
   <header class="accordion">
     <p class="text-xs md:hidden">{post.pubDate}</p>
     <div class="flex gap-2">
-      <p class="hidden flex-1 text-xs md:block md:text-base">{post.pubDate}</p>
+      <p class="hidden flex-1 md:block font-mono text-xs/6">{post.pubDate}</p>
       <h2
         class="splitTitle flex-4 overflow-hidden text-2xl tracking-tighter text-ellipsis whitespace-nowrap md:text-4xl"
       >
@@ -21,7 +21,7 @@ import { Icon } from "astro-icon/components";
       </h2>
 
       <p
-        class="flex-1 text-sm font-semibold tracking-wide text-black/60 uppercase dark:text-white/60"
+        class="flex-1 text-sm dark:text-white/60 text-[11px] font-medium tracking-wide uppercase text-gray-800/70"
       >
         {post.genre}
       </p>
