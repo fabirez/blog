@@ -3,40 +3,39 @@ const { post } = Astro.props;
 ---
 
 <a
-  class="post-list border-foreground flex cursor-pointer items-center border-b"
+	class="post-list border-foreground grid cursor-pointer grid-cols-[auto_minmax(500px,1fr)_150px_minmax(0,auto)] border-b gap-x-8"
   href={post.url}
   data-title={post.title}
-  data-title-preview={post.titlePreview}
-  data-image-url={post.image.url}
-  data-image-alt={post.image.alt}
 >
-  <div class="flex flex-1 items-center gap-1">
-    <p class="text-base">{post.pubDate}</p>
-  </div>
+  <p class="font-mono text-xs/6">{post.pubDate}</p>
 
   <h2
-    class="splitTitle flex-4 overflow-hidden text-4xl tracking-tighter text-ellipsis whitespace-nowrap group-hover:underline"
+    class="overflow-hidden text-4xl tracking-tighter whitespace-nowrap group-hover:underline text-ellipsis relative"
   >
     {post.title}
+   <svg class="absolute top-0 right-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
   </h2>
 
   <p
-    class="flex-1 text-sm font-semibold tracking-wide text-black/60 uppercase dark:text-white/60"
+		class="min-w-[150px] text-[11px] font-medium tracking-wide uppercase text-gray-800/70"
   >
-    {post.genre}
+    #{post.genre}
   </p>
 
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke-width="1.5"
-    stroke="currentColor"
-    class="size-6 flex-1"
-  >
-    <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      d="m7.49 12-3.75 3.75m0 0 3.75 3.75m-3.75-3.75h16.5V4.499"></path>
-  </svg>
+	<span title="<CR>">
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			fill="none"
+			viewBox="0 0 24 24"
+			stroke-width="1.5"
+			stroke="currentColor"
+			class="size-6 flex-1"
+		>
+			<path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				d="m7.49 12-3.75 3.75m0 0 3.75 3.75m-3.75-3.75h16.5V4.499"></path>
+		</svg>
+	</span>
+
 </a>

@@ -1,6 +1,6 @@
 ---
 import ListBlog from "./ui/ListBlog.astro";
-import ListBlogPreview from "./ui/ListBlogPreview.astro";
+import ListBlogProto from "./ui/ListBlogProto.astro";
 import ListBlogWAccordion from "./ui/ListBlogWAccordion.astro";
 const data = import.meta.glob("../pages/blog/*.md", { eager: true });
 const format_data = Object.values(data).map((post) => {
@@ -8,37 +8,28 @@ const format_data = Object.values(data).map((post) => {
 });
 ---
 
-<section class="mt-20 w-full md:mt-40">
-  <div class="mb-20 flex w-full gap-4 px-3 lg:min-h-[50vh]">
-    <div class="hidden w-auto flex-2 flex-col gap-4 lg:flex">
-      {format_data.map((post) => <ListBlog post={post} />)}
+<section class="mt-20 w-full">
+
+  <div class="mb-20 flex w-fit gap-4 px-3">
+
+	 <!--Desktop version-->
+    <ul
+      role="list"
+      class="marker:text-foreground hidden w-auto list-outside list-[square] flex-col gap-4 pl-4 md:flex"
+    >
+      {
+        format_data.map((post) => (
+          <li>
+            <ListBlogProto post={post} />
+          </li>
+        ))
+      }
+    </ul>
+
+		<!--Mobile/Tablet version -->
+    <div class="flex w-full flex-col gap-4 md:hidden">
+      {format_data.map((post) => <ListBlogProto post={post} />)}
     </div>
 
-    <div class="flex w-full flex-col gap-4 lg:hidden">
-      {format_data.map((post) => <ListBlogWAccordion post={post} />)}
-    </div>
-    <ListBlogPreview data={format_data} />
   </div>
 </section>
-
-<script is:inline>
-  const postList = document.querySelectorAll(".post-list");
-  const contentTitle = document.getElementById("content-title");
-  const contentImage = document.getElementById("content-image");
-  const contentPreviewTitle = document.getElementById("title-preview");
-
-  postList.forEach((post) => {
-    post.addEventListener("mouseenter", () => {
-      const title = post.getAttribute("data-title");
-      const imageUrl = post.getAttribute("data-image-url");
-      const imageAlt = post.getAttribute("data-image-alt");
-      const titlePreview = post.getAttribute("data-title-preview");
-
-      contentTitle.textContent = title;
-      contentImage.src = imageUrl;
-      contentImage.alt = imageAlt;
-
-      contentPreviewTitle.textContent = titlePreview;
-    });
-  });
-</script>

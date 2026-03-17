@@ -1,5 +1,5 @@
-const moon_ftr = document.querySelector(".moon_footer");
-const sun_ftr = document.querySelector(".sun_footer");
+const moon = document.querySelector("#moon");
+const sun = document.querySelector("#sun");
 
 const theme = (() => {
   if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
@@ -13,10 +13,10 @@ const theme = (() => {
 
 if (theme === "light") {
   document.documentElement.setAttribute("data-theme", "light");
-  sun_ftr.setAttribute("data-current", "");
+  sun.setAttribute("data-current", "");
 } else {
   document.documentElement.setAttribute("data-theme", "dark");
-  moon_ftr.setAttribute("data-current", "");
+  moon.setAttribute("data-current", "");
 }
 
 window.localStorage.setItem("theme", theme);
@@ -32,19 +32,15 @@ const handleToggleClick = () => {
   window.localStorage.setItem("theme", isDark === "dark" ? "dark" : "light");
 
   if (isDark !== "dark") {
-    sun_ftr.setAttribute("data-current", "");
-    moon_ftr.removeAttribute("data-current");
+    sun.setAttribute("data-current", "");
+    moon.removeAttribute("data-current");
   } else {
-    moon_ftr.setAttribute("data-current", "");
-    sun_ftr.removeAttribute("data-current");
+    moon.setAttribute("data-current", "");
+    sun.removeAttribute("data-current");
   }
 };
 
-document
-  .getElementById("themeToggle")
-  .addEventListener("click", handleToggleClick);
-
-moon_ftr.addEventListener("click", function() {
+moon.addEventListener("click", function() {
   const element = document.documentElement;
 
   if (element.getAttribute("data-theme") === "dark") {
@@ -52,12 +48,12 @@ moon_ftr.addEventListener("click", function() {
   } else {
     element.setAttribute("data-theme", "dark");
     window.localStorage.setItem("theme", "dark");
-    moon_ftr.setAttribute("data-current", "");
-    sun_ftr.removeAttribute("data-current");
+    moon.setAttribute("data-current", "");
+    sun.removeAttribute("data-current");
   }
 });
 
-sun_ftr.addEventListener("click", function() {
+sun.addEventListener("click", function() {
   const element = document.documentElement;
 
   if (element.getAttribute("data-theme") === "light") {
@@ -65,7 +61,7 @@ sun_ftr.addEventListener("click", function() {
   } else {
     element.setAttribute("data-theme", "light");
     window.localStorage.setItem("theme", "light");
-    sun_ftr.setAttribute("data-current", "");
-    moon_ftr.removeAttribute("data-current");
+    sun.setAttribute("data-current", "");
+    moon.removeAttribute("data-current");
   }
 });
