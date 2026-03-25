@@ -1,7 +1,5 @@
 ---
-import ListBlog from "./ui/ListBlog.astro";
 import ListBlogProto from "./ui/ListBlogProto.astro";
-import ListBlogWAccordion from "./ui/ListBlogWAccordion.astro";
 const data = import.meta.glob("../pages/blog/*.md", { eager: true });
 const format_data = Object.values(data).map((post) => {
   return { ...post.frontmatter, url: post.url };
@@ -15,7 +13,7 @@ const format_data = Object.values(data).map((post) => {
 	 <!--Desktop version-->
     <ul
       role="list"
-      class="marker:text-foreground hidden w-auto list-outside list-[square] flex-col gap-4 pl-4 md:flex"
+      class="marker:text-foreground hidden w-auto list-outside flex-col gap-20 pl-4 md:flex"
     >
       {
         format_data.map((post) => (

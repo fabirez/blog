@@ -3,27 +3,27 @@ const { post } = Astro.props;
 import { Icon } from "astro-icon/components";
 ---
 
-<div class="flex flex-col pt-8">
-	<h4 class="min-w-28">Description</h4>
+<div class="flex flex-col pt-10">
 
-	<p class="text-xl pl-16 max-w-xl">
+	<p class="max-w-xl text-xs/5 text-gray-600 dark:text-gray-400">
 		{post.description ? post.description : "There is no description"}
 	</p>
 </div>
 
 <div class="flex flex-col pt-2">
-	<h4 class="min-w-28 max-w-xl">Genre</h4>
 
-	<div class="pl-16 flex">
+	<div class="flex justify-end max-w-lg ml-auto">
 		{
-			post.tags.map((tag) => (
-				<div class="border-foreground border px-2 py-0.5 w-fit">{tag.name}</div>
+			post.keywords.map((keyword) => (
+			<div class="border-gray-950/10 w-fit border px-2 py-0.5 text-xs/4 text-gray-600 dark:text-gray-400 dark:border-white/10">
+					{keyword}
+				</div>
 			))
 		}
 	</div>
 </div>
 
-<a href={post.url} class="text-accent flex items-center gap-2 pt-8">
-	See it now 
+<a href={post.url} class="text-accent flex items-center gap-2 pt-10">
+	See it now
 	<Icon name="arrow_link-icon" />
 </a>

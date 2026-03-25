@@ -8,10 +8,10 @@ genre: "General"
 image:
   url: "/images/gif_test.gif"
   alt: "Logo of git"
-tags:
-  - name: "computer science"
-  - name: "github"
-  - name: "git"
+keywords:
+  - "computer science"
+  - "github"
+  - "git"
 pubDate: 24/10/2024
 ---
 

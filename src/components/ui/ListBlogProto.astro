@@ -5,31 +5,20 @@ import BodyListBlog from "./BodyListBlog.astro";
 ---
 
 <div
-  class="border-foreground flex cursor-pointer flex-col border-b"
+  class="flex cursor-pointer flex-col"
   data-title={post.title}
   data-description={post.description}
   data-image-url={post.image.url}
   data-image-alt={post.image.alt}
 >
 
-  <header class="accordion">
+  <header>
 		<HeaderListBlog post={post}/>
   </header>
 
   <div
-    class="hidden opacity-100 transition-opacity duration-300 ease-in-out starting:opacity-0 [.open_&]:block"
+    class="opacity-100 transition-opacity duration-300 ease-in-out"
   >
 		<BodyListBlog post={post} />
 	</div>
 </div>
-
-<script>
-  let accordions = document.querySelectorAll(".accordion");
-
-  accordions.forEach((acc) => {
-    acc.addEventListener("click", function () {
-      acc.parentElement.classList.toggle("open");
-    });
-  });
-</script>
-
