@@ -1,0 +1,22 @@
+---
+import ListBlog from "./ListBlog.astro";
+const data = import.meta.glob("../pages/blog/*.md", { eager: true });
+const format_data = Object.values(data).map((post) => {
+  return { ...post.frontmatter, url: post.url };
+});
+---
+
+<section class="mt-20 w-full">
+    <ul
+      role="list"
+      class="marker:text-foreground flex-col gap-20 pl-4 flex w-fit"
+    >
+      {
+        format_data.map((post) => (
+          <li>
+            <ListBlog post={post} />
+          </li>
+        ))
+      }
+    </ul>
+</section>

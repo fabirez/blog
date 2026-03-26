@@ -1,0 +1,21 @@
+---
+const { post } = Astro.props;
+import HeaderListBlog from "./HeaderListBlog.astro";
+import BodyListBlog from "./BodyListBlog.astro";
+---
+
+<div
+	class="flex cursor-pointer flex-col"
+	data-title={post.title}
+	data-description={post.description}
+	data-image-url={post.image.url}
+	data-image-alt={post.image.alt}
+>
+	<header>
+		<HeaderListBlog post={post} />
+	</header>
+
+	<div class="opacity-100 transition-opacity duration-300 ease-in-out">
+		<BodyListBlog post={post} />
+	</div>
+</div>

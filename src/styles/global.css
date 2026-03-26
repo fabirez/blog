@@ -45,29 +45,16 @@
   }
 }
 
-@utility length-line {
-  height: calc(50vh - 32px);
-}
-
-@utility wall {
-  @apply relative h-full w-full border border-dashed border-cyan-300 bg-black dark:bg-white;
-}
-
-@utility free {
-  @apply relative h-full w-full border border-dashed border-lime-400 bg-gray-400 dark:bg-gray-800;
-}
-
-
-@utility link{ 
-	@apply hover:text-foreground mt-0 no-underline text-foreground text-sm;
-}
-
 .expanded .hamburgerNav {
   display: block;
 }
 
 .rainbowCol {
   width: 100%;
+}
+
+.link{ 
+	@apply hover:text-foreground mt-0 no-underline text-foreground text-sm;
 }
 
 @property --gradient-angle {
