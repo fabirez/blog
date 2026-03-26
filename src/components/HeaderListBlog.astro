@@ -1,0 +1,30 @@
+---
+import { betterDate } from "../lib/betterDate.js";
+
+const { post } = Astro.props;
+const formattedDate = betterDate(post.pubDate);
+---
+
+<div class="grid grid-cols-[minmax(0,1fr)_300px]">
+	<h2
+		class="w-fit overflow-hidden text-2xl tracking-tighter text-ellipsis whitespace-nowrap md:text-4xl"
+	>
+		{post.title}
+	</h2>
+
+	<div class="flex items-end justify-end gap-0.5">
+		<p
+			class="text-xs tracking-wide text-gray-800/70 uppercase dark:text-white/60"
+		>
+			#{post.genre}
+		</p>
+
+		<div class="grid size-4 place-content-center">
+			<div
+				class="size-1 bg-gray-950/5 dark:fill-white/10 dark:stroke-white/10"
+				aria-label="square-icon"
+			/>
+		</div>
+		<p class="text-xs">{formattedDate}</p>
+	</div>
+</div>

@@ -8,11 +8,12 @@ genre: "OSSU"
 image:
   url: "/images/img_blog.jpg"
   alt: "Abstract photo for Systematic Program Design"
-tags:
-  - name: "computer science"
-  - name: "github"
-  - name: "git"
-pubDate: 24/10/2024
+keywords:
+  - "computer science"
+  - "patterns"
+  - "recursion"
+  - "systematic design"
+pubDate: 24/10/2026
 ---
 
 ### What is it ?

@@ -41,7 +41,6 @@
   @apply text-foreground my-8 text-[42px] leading-[52px] tracking-tight capitalize;
 }*/
 
-
 .blog h2 {
   @apply text-foreground mb-7 text-[32px] leading-10 tracking-tight capitalize;
 }
@@ -94,7 +93,6 @@
   @apply block;
 }
 
-
 .blog pre {
   @apply max-w-[1024px];
 }
@@ -121,11 +119,3 @@
 .h_color5 {
   @apply bg-h-color-5/30 dark:bg-h-color-5/20;
 }
-/**/
-/* .h1_clamp { */
-/*   font-size: clamp(3rem, 1.3673rem + 8.1633vw, 8rem); */
-/* } */
-
-/* .h1_clamp { */
-/*   font-size: clamp(3rem, 1.3673rem + 8.1633vw, 8rem); */
-/* } */

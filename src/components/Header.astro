@@ -1,11 +1,11 @@
 ---
 import { Icon } from "astro-icon/components";
-import ThemeToggle from "./ThemeToggle.astro";
+import ThemeToggle from "./ui/ThemeToggle.astro";
 
 const linksNav = [
   {
-    nameLink: "Experiment",
-    link: "/experiment/",
+    nameLink: "here",
+    link: "/",
   },
 ];
 ---
@@ -21,10 +21,10 @@ const linksNav = [
   </a>
 
     <nav>
-      <ul class="flex gap-8 list-none!">
+      <ul class="flex gap-8">
         {
           linksNav.map(({ nameLink, link }) => (
-            <li class="!mt-0">
+            <li class="[.blog_&]:!mt-0 list-none">
               <a
                 href={link}
 								class="link"
