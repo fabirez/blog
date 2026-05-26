@@ -43,7 +43,7 @@ tl.to(".asterisk", {
 });
 
 cont_logo.forEach((el) => {
-  el.addEventListener("mouseenter", function() {
+  el.addEventListener("mouseenter", function () {
     tl.restart();
   });
 });

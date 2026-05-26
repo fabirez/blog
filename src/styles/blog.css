@@ -36,7 +36,6 @@
   @apply text-para-blog bg-background selection:bg-foreground selection:text-background;
 }
 
-
 /*.blog h1 {
   @apply text-foreground my-8 text-[42px] leading-[52px] tracking-tight capitalize;
 }*/
@@ -69,8 +68,8 @@
   @apply mt-4 text-xl;
 }
 
-.blog .link{ 
-	@apply hover:text-foreground mt-0 no-underline text-foreground text-sm;
+.blog .link {
+  @apply hover:text-foreground text-foreground mt-0 text-sm no-underline;
 }
 
 .blog a {

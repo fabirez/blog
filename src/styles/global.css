@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "tailwindcss";
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
@@ -53,8 +53,8 @@
   width: 100%;
 }
 
-.link{ 
-	@apply hover:text-foreground mt-0 no-underline text-foreground text-sm;
+.link {
+  @apply hover:text-foreground text-foreground mt-0 text-sm no-underline;
 }
 
 @property --gradient-angle {
@@ -71,14 +71,18 @@
 
 .shiny-border {
   border: 4px solid transparent;
-  background: 
-    linear-gradient(var(--color-background), var(--color-background)) padding-box,
-    conic-gradient(from var(--gradient-angle),
-      var(--color-gray-300) var(--gradient-percent) 280deg,
-      var(--color-red-400) var(--gradient-percent) 300deg,
-      var(--color-yellow-400) var(--gradient-percent) 320deg,
-      var(--color-purple-400) var(--gradient-percent) 340deg,
-      var(--color-blue-400) 360deg) border-box;
+  background:
+    linear-gradient(var(--color-background), var(--color-background))
+      padding-box,
+    conic-gradient(
+        from var(--gradient-angle),
+        var(--color-gray-300) var(--gradient-percent) 280deg,
+        var(--color-red-400) var(--gradient-percent) 300deg,
+        var(--color-yellow-400) var(--gradient-percent) 320deg,
+        var(--color-purple-400) var(--gradient-percent) 340deg,
+        var(--color-blue-400) 360deg
+      )
+      border-box;
   animation: rotate-btn 3s linear infinite;
 }
 

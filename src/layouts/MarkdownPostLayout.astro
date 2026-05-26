@@ -4,17 +4,15 @@ const { frontmatter } = Astro.props;
 ---
 
 <BlogLayout pageTitle={frontmatter.title}>
-
-  <header class="flex flex-col my-8">
+  <header class="my-8 flex flex-col">
     <h1
-      class="text-balance text-foreground text-6xl sm:text-8xl max-w-4xl pl-4 text-left leading-[52px] font-medium tracking-tighter capitalize min-[520px]:leading-16 min-[800px]:leading-20 sm:tracking-tight lg:leading-28 pb-8"
+      class="text-foreground max-w-4xl pb-8 pl-4 text-left text-6xl leading-[52px] font-medium tracking-tighter text-balance capitalize min-[520px]:leading-16 min-[800px]:leading-20 sm:text-8xl sm:tracking-tight lg:leading-28"
     >
       {frontmatter.title}
     </h1>
   </header>
 
-    <div class="mb-8 px-4 text-left">
-      <slot />
-    </div>
-
+  <div class="mb-8 px-4 text-left">
+    <slot />
+  </div>
 </BlogLayout>

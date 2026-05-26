@@ -10,7 +10,7 @@ const linksNav = [
 ];
 ---
 
-<header class="mx-2 mt-8 flex lg:w-5xl items-center justify-between lg:mx-4">
+<header class="mx-2 mt-8 flex items-center justify-between lg:mx-4 lg:w-5xl">
   <a href="/" class="flex">
     <div class="cont_logo flex items-center">
       <Icon name="caffeine" class="text-foreground" />
@@ -20,22 +20,19 @@ const linksNav = [
     </div>
   </a>
 
-    <nav>
-      <ul class="flex gap-8">
-        {
-          linksNav.map(({ nameLink, link }) => (
-            <li class="[.blog_&]:!mt-0 list-none">
-              <a
-                href={link}
-								class="link"
-              >
-                {nameLink}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
+  <nav>
+    <ul class="flex gap-8">
+      {
+        linksNav.map(({ nameLink, link }) => (
+          <li class="list-none [.blog_&]:!mt-0">
+            <a href={link} class="link">
+              {nameLink}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
 
-    <ThemeToggle />
+  <ThemeToggle />
 </header>

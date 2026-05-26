@@ -7,16 +7,16 @@ const format_data = Object.values(data).map((post) => {
 ---
 
 <section class="mt-20 w-full">
-    <ul
-      role="list"
-      class="marker:text-foreground flex-col gap-20 pl-4 flex w-fit"
-    >
-      {
-        format_data.map((post) => (
-          <li>
-            <ListBlog post={post} />
-          </li>
-        ))
-      }
-    </ul>
+  <ul
+    role="list"
+    class="flex w-fit flex-col gap-20 pl-4"
+  >
+    {
+      format_data.map((post) => (
+        <li>
+          <ListBlog post={post} />
+        </li>
+      ))
+    }
+  </ul>
 </section>
