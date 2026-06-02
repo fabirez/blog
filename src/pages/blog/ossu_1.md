@@ -6,8 +6,8 @@ author: "caffeine*"
 genre: "courses"
 pubDate: 24/10/2026
 resources:
-    - courseLink: https://learning.edx.org/course/course-v1:UBCx+SPD1x+2T2015/home
-    - borrLink: https://borr.dev/computer-science/#core-cs
+  - courseLink: https://learning.edx.org/course/course-v1:UBCx+SPD1x+2T2015/home
+  - borrLink: https://borr.dev/computer-science/#core-cs
 ---
 
 ### What is it ?

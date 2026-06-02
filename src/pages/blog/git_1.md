@@ -5,8 +5,8 @@ description: "When I first heard about Git, I thought it was just some complex t
 genre: "General"
 pubDate: 26/02/2026
 resources:
-    - gitBook: https://git-scm.com/book/en/v2
-    - gitDoc:  https://git-scm.com/docs
+  - gitBook: https://git-scm.com/book/en/v2
+  - gitDoc: https://git-scm.com/docs
 ---
 
 ### Working Directory
@@ -40,8 +40,9 @@ Inside it there are all the versions of our project that are divided into <span 
 2. blob (files)
 3. commit
 
-***************
+---
 
 ## Resources
+
 1. [Git book](https://git-scm.com/book/en/v2)
 2. [Git documentation](https://git-scm.com/docs)

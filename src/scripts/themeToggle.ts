@@ -1,9 +1,11 @@
+type Theme = "dark" | "light";
+
 const moon = document.querySelector("#moon");
 const sun = document.querySelector("#sun");
 
-const theme = (() => {
+const theme: Theme = (() => {
   if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-    return localStorage.getItem("theme");
+    return localStorage.getItem("theme") as Theme;
   }
   if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
     return "dark";

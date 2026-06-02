@@ -19,7 +19,7 @@ document.querySelectorAll("pre").forEach((pre) => {
   pre.append(btnCopy);
 });
 
-async function setClipboard(text) {
+async function setClipboard(text: string) {
   const type = "text/plain";
   const clipboardItemData = {
     [type]: text,

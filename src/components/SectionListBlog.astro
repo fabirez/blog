@@ -1,18 +1,19 @@
 ---
+import type { Frontmatter, Posts } from "../lib/types.ts";
+import type { MarkdownInstance } from 'astro';
 import ListBlog from "./ListBlog.astro";
-const data = import.meta.glob("../pages/blog/*.md", { eager: true });
-const format_data = Object.values(data).map((post) => {
+// https://docs.astro.build/en/guides/imports/#import-type-utilities
+const data = import.meta.glob<MarkdownInstance<Frontmatter>>("../pages/blog/*.md", { eager: true });
+
+const posts:Posts[] = Object.values(data).map((post) => {
   return { ...post.frontmatter, url: post.url };
 });
 ---
 
 <section class="mt-20 w-full">
-  <ul
-    role="list"
-    class="flex w-fit flex-col gap-20 pl-4"
-  >
+  <ul role="list" class="flex w-fit flex-col gap-20 pl-4">
     {
-      format_data.map((post) => (
+      posts.map((post) => (
         <li>
           <ListBlog post={post} />
         </li>
