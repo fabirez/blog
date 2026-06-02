@@ -36,10 +36,6 @@
   @apply text-para-blog bg-background selection:bg-foreground selection:text-background;
 }
 
-/*.blog h1 {
-  @apply text-foreground my-8 text-[42px] leading-[52px] tracking-tight capitalize;
-}*/
-
 .blog h2 {
   @apply text-foreground mb-7 text-[32px] leading-10 tracking-tight capitalize;
 }
