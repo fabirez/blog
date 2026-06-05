@@ -14,7 +14,7 @@ const linksNav = [
 <header class="mx-2 mt-8 flex items-center justify-between lg:mx-4 lg:w-5xl">
   <a href="/" class="flex">
     <div class="cont_logo flex items-center">
-      <Caffeine />
+      <Caffeine class="text-foreground"/>
       <div class="flex h-8 items-start">
         <Asterisk class="asterisk"/>
       </div>
@@ -22,11 +22,11 @@ const linksNav = [
   </a>
 
   <nav>
-    <ul class="flex gap-8">
+    <ul class="flex gap-8 listLink">
       {
         linksNav.map(({ nameLink, link }) => (
-          <li class="list-none [.blog_&]:!mt-0">
-            <a href={link} class="link">
+          <li class="list-none navLink">
+            <a href={link} class="link text-sm">
               {nameLink}
             </a>
           </li>

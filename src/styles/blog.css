@@ -33,51 +33,109 @@
 }
 
 .blog {
-  @apply text-para-blog bg-background selection:bg-foreground selection:text-background;
+  @apply bg-background text-foreground selection:bg-foreground selection:text-background text-sm/7;
+}
+
+
+.blog h1,
+h2,
+h3,
+h4,
+h5{
+  @apply font-medium;
+}
+
+.blog h1 {
+  @apply text-foreground      text-2xl md:text-4xl tracking-tighter  px-4;
 }
 
 .blog h2 {
-  @apply text-foreground mb-7 text-[32px] leading-10 tracking-tight capitalize;
+  @apply text-foreground mt-16 text-xl  md:text-3xl leading-10 tracking-tight capitalize;
 }
 
 .blog h3 {
-  @apply text-foreground mb-4 text-2xl leading-8 tracking-tight capitalize;
+  @apply text-foreground mt-12 text-lg  md:text-2xl  leading-8 tracking-tight capitalize;
 }
 
 .blog h4 {
-  @apply text-foreground mb-2 text-xl leading-6 tracking-normal;
+  @apply text-foreground mt-8 text-base md:text-xl  leading-6 tracking-normal;
 }
 
 .blog p {
-  @apply text-para-blog mb-11 max-w-2xl text-[1.375rem] leading-8 tracking-tight has-[+ol]:mb-2 has-[+ul]:mb-2;
+  @apply text-foreground mt-4 text-sm/7 max-w-2xl has-[+ol]:mb-2 has-[+ul]:mb-2;
+}
+
+
+.blog code {
+  @apply text-foreground  before:content-['`'] after:content-['`'];
+}
+
+.blog .listLink {
+  @apply pl-0 mt-0;
+}
+
+.blog .navLink {
+  @apply pl-0 mt-0;
+}
+
+.blog header a {
+  @apply after:content-[''] font-normal;
 }
 
 .blog ul {
-  @apply list-[square];
+  @apply list-[square] pl-8 mt-8;
 }
 
 .blog ol {
-  @apply mb-8 list-decimal pl-8;
+  @apply list-decimal pl-8 mb-8;
 }
 
+
 .blog li {
-  @apply mt-4 text-xl;
+  @apply pl-3 mt-4 text-foreground;
 }
 
 .blog .link {
-  @apply hover:text-foreground text-foreground mt-0 text-sm no-underline;
+  @apply pl-0 mt-0 text-foreground no-underline text-sm;
+}
+
+.blog pre code {
+  @apply before:content-[''] after:content-[''];
+}
+.blog hr {
+  @apply my-20 border-foreground/10;
 }
 
 .blog a {
-  @apply text-link-blog block underline;
+  @apply text-foreground underline font-medium underline-offset-4 after:content-[url("/src/assets/arrowLink.svg")] decoration-blue-400 hover:decoration-3;
 }
 
 .blog pre {
-  @apply relative mb-11 rounded-xl p-5 outline-2 -outline-offset-4 outline-gray-600;
+  @apply relative mb-11 rounded-xl p-5 mt-6 outline-2 -outline-offset-4 outline-gray-600 max-w-[1024px];
 }
 
 .blog .blogImg {
-  @apply mb-11 rounded-xl;
+  @apply mt-6 rounded-xl;
+}
+
+.h_color1 {
+  @apply bg-h-color-1/30 dark:bg-h-color-1/80;
+}
+
+.h_color2 {
+  @apply bg-h-color-2/30 dark:bg-h-color-2/80;
+}
+
+.h_color3 {
+  @apply bg-h-color-3/30 dark:bg-h-color-3/80;
+}
+
+.h_color4 {
+  @apply bg-h-color-4/30 dark:bg-h-color-4/80;
+}
+
+.h_color5 {
+  @apply bg-h-color-5/30 dark:bg-h-color-5/80;
 }
 
 .btnCopy {
@@ -86,31 +144,4 @@
 
 .visible .btnCopy {
   @apply block;
-}
-
-.blog pre {
-  @apply max-w-[1024px];
-}
-.blog code {
-  @apply border-foreground/60 p-1 text-lg/6 text-blue-400;
-}
-
-.h_color1 {
-  @apply bg-h-color-1/30 dark:bg-h-color-1/20;
-}
-
-.h_color2 {
-  @apply bg-h-color-2/30 dark:bg-h-color-2/20;
-}
-
-.h_color3 {
-  @apply bg-h-color-3/30 dark:bg-h-color-3/20;
-}
-
-.h_color4 {
-  @apply bg-h-color-4/30 dark:bg-h-color-4/20;
-}
-
-.h_color5 {
-  @apply bg-h-color-5/30 dark:bg-h-color-5/20;
 }
