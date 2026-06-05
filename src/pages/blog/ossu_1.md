@@ -1,21 +1,13 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
 title: "Systematic Program Design"
-titlePreview: "The best way i found to how to code"
 description: "When I first started learning to code, everything felt chaotic — so many things to think about, so many ways to do the same thing. But then I stumbled upon a systematic approach to programming that changed the way I view code."
-author: "caffeine*"
-genre: "OSSU"
-image:
-  url: "/images/img_blog.jpg"
-  alt: "Abstract photo for Systematic Program Design"
-keywords:
-  - "computer science"
-  - "patterns"
-  - "recursion"
-  - "systematic design"
+genre: "courses"
 pubDate: 24/10/2026
+resources:
+  - courseLink: https://learning.edx.org/course/course-v1:UBCx+SPD1x+2T2015/home
+  - borrLink: https://borr.dev/computer-science/#core-cs
 ---
-
 ### What is it ?
 
 It's simple one of the best courses, i ever take on computer science.
@@ -29,7 +21,6 @@ L'argomento principale di questo corso, è quello di riuscire a dividere ogni pr
 
 Una sezione del corso, riguarda a _How to Design Function_ (HtDF). <br />
 Per farlo dobbiamo dividerla in 6 <span class="h_color1">steps</span> fondamentali:
-
 
 Supponiamo di voler creare una funzione che qualsiasi `n` prende in entrata, restituisce il prodotto moltiplicato per 2.
 
@@ -104,3 +95,10 @@ function multiply(n) {
   return n * 2;
 }
 ```
+
+---
+
+## Resources
+
+1. [Git book](https://git-scm.com/book/en/v2)
+2. [Git documentation](https://git-scm.com/docs)

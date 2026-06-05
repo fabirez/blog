@@ -1,9 +1,11 @@
+type Theme = "dark" | "light";
+
 const moon = document.querySelector("#moon");
 const sun = document.querySelector("#sun");
 
-const theme = (() => {
+const theme: Theme = (() => {
   if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-    return localStorage.getItem("theme");
+    return localStorage.getItem("theme") as Theme;
   }
   if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
     return "dark";
@@ -40,7 +42,7 @@ const handleToggleClick = () => {
   }
 };
 
-moon.addEventListener("click", function() {
+moon.addEventListener("click", function () {
   const element = document.documentElement;
 
   if (element.getAttribute("data-theme") === "dark") {
@@ -53,7 +55,7 @@ moon.addEventListener("click", function() {
   }
 });
 
-sun.addEventListener("click", function() {
+sun.addEventListener("click", function () {
   const element = document.documentElement;
 
   if (element.getAttribute("data-theme") === "light") {
