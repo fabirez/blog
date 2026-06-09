@@ -1,26 +1,28 @@
 ---
+
 export async function getStaticPaths() {
   return [
     {
       params: {
-        tag: "git_0",
+        tag: "general",
       },
     },
     {
       params: {
-        tag: "git_1",
-      },
-    },
-    {
-      params: {
-        tag: "git_2",
+        tag: "courses",
       },
     },
     {
       params: {
         tag: "ossu",
       },
-    },
+    }
   ];
 }
+
+
+const {tag} = Astro.params;
 ---
+<BaseLayout pageTitle={tag}>
+  <p>Posts tagged with {tag}</p>
+</BaseLayout>

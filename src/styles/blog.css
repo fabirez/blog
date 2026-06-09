@@ -62,12 +62,12 @@ h5{
 }
 
 .blog p {
-  @apply text-foreground mt-4 text-sm/7 max-w-2xl has-[+ol]:mb-2 has-[+ul]:mb-2;
+  @apply text-para-blog mt-4 text-sm/7 max-w-2xl has-[+ol]:mb-2 has-[+ul]:mb-2;
 }
 
 
 .blog code {
-  @apply text-foreground  before:content-['`'] after:content-['`'];
+  @apply  text-foreground before:content-['`'] after:content-['`']
 }
 
 .blog .listLink {
@@ -107,7 +107,11 @@ h5{
 }
 
 .blog a {
-  @apply text-foreground underline font-medium underline-offset-4 after:content-[url("/src/assets/arrowLink.svg")] decoration-blue-400 hover:decoration-3;
+  @apply text-foreground underline font-medium underline-offset-4 after:content-[url("/src/assets/arrowLink.svg")] hover:decoration-3 decoration-blue-400;
+}
+
+.blog .arrowLink{
+  @apply text-red-400 stroke-red-400;
 }
 
 .blog pre {
@@ -119,23 +123,23 @@ h5{
 }
 
 .h_color1 {
-  @apply bg-h-color-1/30 dark:bg-h-color-1/80;
+  @apply bg-h-color-1/30 dark:bg-h-color-1/40;
 }
 
 .h_color2 {
-  @apply bg-h-color-2/30 dark:bg-h-color-2/80;
+  @apply bg-h-color-2/30 dark:bg-h-color-2/40;
 }
 
 .h_color3 {
-  @apply bg-h-color-3/30 dark:bg-h-color-3/80;
+  @apply bg-h-color-3/30 dark:bg-h-color-3/40;
 }
 
 .h_color4 {
-  @apply bg-h-color-4/30 dark:bg-h-color-4/80;
+  @apply bg-h-color-4/30 dark:bg-h-color-4/40;
 }
 
 .h_color5 {
-  @apply bg-h-color-5/30 dark:bg-h-color-5/80;
+  @apply bg-h-color-5/30 dark:bg-h-color-5/40;
 }
 
 .btnCopy {
