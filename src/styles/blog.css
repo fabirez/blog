@@ -36,86 +36,83 @@
   @apply bg-background text-foreground selection:bg-foreground selection:text-background text-sm/7;
 }
 
-
 .blog h1,
 h2,
 h3,
 h4,
-h5{
+h5 {
   @apply font-medium;
 }
 
 .blog h1 {
-  @apply text-foreground      text-2xl md:text-4xl tracking-tighter  px-4;
+  @apply text-foreground px-4 text-2xl tracking-tighter md:text-4xl;
 }
 
 .blog h2 {
-  @apply text-foreground mt-16 text-xl  md:text-3xl leading-10 tracking-tight capitalize;
+  @apply text-foreground mt-16 text-xl leading-10 tracking-tight capitalize md:text-3xl;
 }
 
 .blog h3 {
-  @apply text-foreground mt-12 text-lg  md:text-2xl  leading-8 tracking-tight capitalize;
+  @apply text-foreground mt-12 text-lg leading-8 tracking-tight capitalize md:text-2xl;
 }
 
 .blog h4 {
-  @apply text-foreground mt-8 text-base md:text-xl  leading-6 tracking-normal;
+  @apply text-foreground mt-8 text-base leading-6 tracking-normal md:text-xl;
 }
 
 .blog p {
-  @apply text-para-blog mt-4 text-sm/7 max-w-2xl has-[+ol]:mb-2 has-[+ul]:mb-2;
+  @apply text-para-blog mt-4 max-w-2xl text-sm/7 has-[+ol]:mb-2 has-[+ul]:mb-2;
 }
 
-
 .blog code {
-  @apply  text-foreground before:content-['`'] after:content-['`']
+  @apply text-foreground before:content-['`'] after:content-['`'];
 }
 
 .blog .listLink {
-  @apply pl-0 mt-0;
+  @apply mt-0 pl-0;
 }
 
 .blog .navLink {
-  @apply pl-0 mt-0;
+  @apply mt-0 pl-0;
 }
 
-.blog header a {
-  @apply after:content-[''] font-normal;
-}
 
 .blog ul {
-  @apply list-[square] pl-8 mt-8;
+  @apply mt-8 list-[square] pl-8;
 }
 
 .blog ol {
-  @apply list-decimal pl-8 mb-8;
+  @apply mb-8 list-decimal pl-8;
 }
-
 
 .blog li {
-  @apply pl-3 mt-4 text-foreground;
+  @apply text-foreground mt-4 pl-3;
 }
 
-.blog .link {
-  @apply pl-0 mt-0 text-foreground no-underline text-sm;
-}
 
 .blog pre code {
   @apply before:content-[''] after:content-[''];
 }
 .blog hr {
-  @apply my-20 border-foreground/10;
+  @apply border-foreground/10 my-20;
 }
 
-.blog a {
-  @apply text-foreground underline font-medium underline-offset-4 after:content-[url("/src/assets/arrowLink.svg")] hover:decoration-3 decoration-blue-400;
+.blog a:not(.headerLink) {
+  @apply text-foreground font-medium underline decoration-neutral-950/20 dark:decoration-stone-700 underline-offset-4 hover:decoration-3 
 }
 
-.blog .arrowLink{
-  @apply text-red-400 stroke-red-400;
+.blog a:not(.headerLink)::after {
+  content:"";
+  display:inline-flex;
+  width:12px; height:12px;
+  background-color:var(--color-foreground);
+  mask: url('/src/assets/arrowLink.svg');
 }
+
+.blog a:not(.
 
 .blog pre {
-  @apply relative mb-11 rounded-xl p-5 mt-6 outline-2 -outline-offset-4 outline-gray-600 max-w-[1024px];
+  @apply relative mt-6 mb-11 max-w-[1024px] rounded-xl p-5 outline-2 -outline-offset-4 outline-gray-600;
 }
 
 .blog .blogImg {

@@ -12,7 +12,7 @@ const linksNav = [
 ---
 
 <header class="mx-2 mt-8 flex items-center justify-between lg:mx-4 lg:w-5xl">
-  <a href="/" class="flex">
+  <a href="/" class="flex headerLink">
     <div class="cont_logo flex items-center">
       <Caffeine class="text-foreground"/>
       <div class="flex h-8 items-start">
@@ -26,7 +26,7 @@ const linksNav = [
       {
         linksNav.map(({ nameLink, link }) => (
           <li class="list-none navLink">
-            <a href={link} class="link text-sm">
+            <a href={link} class="headerLink text-sm">
               {nameLink}
             </a>
           </li>
