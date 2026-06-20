@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import type { Frontmatter, Posts } from "../lib/types.ts";
 import type { MarkdownInstance } from "astro";
+import {DESCRIPTION_GENRE} from "../../lib/data.ts"
 
 const data = import.meta.glob<MarkdownInstance<Frontmatter>>("../blog/*.md", {
   eager: true,
@@ -14,14 +15,35 @@ const uniqueTags: string[] = [...new Set(posts.map((post) => post.genre))];
 ---
 
 <BaseLayout pageTitle="All Tags">
-<section class="mt-20 w-full">
-  <h1> All the tags: </h1>
-  <ul>
+<!-- <section class="mt-20 w-full"> -->
+<!--   <ul role="list" class="pl-4 flex gap-4"> -->
+<!--     {uniqueTags.map((tag) =>  -->
+<!--     <li> -->
+<!--         <a class="text-gray-800/70 font-medium underline decoration-neutral-950/20 dark:decoration-stone-700 underline-offset-4 hover:decoration-3  group hover:text-foreground text-sm/7 capitalize" href={`/tags/${tag}`}> -->
+<!--           <span class="text-gray-600 dark:text-gray-400 group-hover:text-foreground"> # </span>{tag} </a> -->
+<!--     </li> -->
+<!--     )} -->
+<!---->
+<!---->
+<!--   </ul> -->
+<!-- </section>  -->
+
+<section class="mt-20 w-full lg:w-5xl">
+  <ul role="list" class="px-4">
     {uniqueTags.map((tag) => 
-    <li>
-      <a href={`/tags/${tag}`}> {tag} </a>
+    <li class="border-t border-black/10">
+        <a class="flex  gap-40 w-full group text-foreground text-sm/7  py-5 pr-4 pl-6 sm:pr-2 sm:pl-4" href={`/tags/${tag}`}>
+          <p class="capitalize font-medium underline decoration-neutral-950/20 dark:decoration-stone-700 underline-offset-4 group-hover:decoration-3 text-nowrap"> # {tag}</p>
+
+          <p class="text-gray-600 dark:text-gray-400 text-sm/7 max-w-xl">
+            {DESCRIPTION_GENRE[tag]} 
+        </p>
+      </a>
     </li>
     )}
+
+
   </ul>
 </section> 
+
 </BaseLayout>
