@@ -1,6 +1,6 @@
 ---
-import Asterisk from "../icons/Asterisk.astro"
-import Caffeine from "../icons/Caffeine.astro"
+import Asterisk from "../icons/Asterisk.astro";
+import Caffeine from "../icons/Caffeine.astro";
 import ThemeToggle from "./ui/ThemeToggle.astro";
 
 const linksNav = [
@@ -12,21 +12,21 @@ const linksNav = [
 ---
 
 <header class="mx-2 mt-8 flex items-center justify-between lg:mx-4 lg:w-5xl">
-  <a href="/" class="flex">
+  <a href="/" class="headerLink flex">
     <div class="cont_logo flex items-center">
-      <Caffeine class="text-foreground"/>
+      <Caffeine class="text-foreground" />
       <div class="flex h-8 items-start">
-        <Asterisk class="asterisk"/>
+        <Asterisk class="asterisk" />
       </div>
     </div>
   </a>
 
   <nav>
-    <ul class="flex gap-8 listLink">
+    <ul class="listLink flex gap-8">
       {
         linksNav.map(({ nameLink, link }) => (
-          <li class="list-none navLink">
-            <a href={link} class="link text-sm">
+          <li class="navLink list-none">
+            <a href={link} class="headerLink text-sm">
               {nameLink}
             </a>
           </li>

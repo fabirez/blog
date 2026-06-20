@@ -3,6 +3,14 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
+:root {
+  --foreground: rgb(0, 0, 0);
+}
+
+.dark {
+  --foreground: rbg(255, 255, 255);
+}
+
 @theme {
   --font-bold: "Notable", "sans-serif";
   --font-sans: "Inter", "sans-serif";

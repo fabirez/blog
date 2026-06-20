@@ -8,6 +8,7 @@ resources:
   - gitBook: https://git-scm.com/book/en/v2
   - gitDoc: https://git-scm.com/docs
 ---
+
 ### Working Directory
 
 It is a checkout of a specific version of the project.
@@ -36,8 +37,8 @@ Inside it there are all the versions of our project that are divided into <span 
 #### We have 3 types of objects
 
 1. **tree (folders)**
-2. **blob (files)** 
-3. **commit** 
+2. **blob (files)**
+3. **commit**
 
 ---
 

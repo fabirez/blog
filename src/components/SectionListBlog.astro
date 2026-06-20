@@ -1,11 +1,14 @@
 ---
 import type { Frontmatter, Posts } from "../lib/types.ts";
-import type { MarkdownInstance } from 'astro';
+import type { MarkdownInstance } from "astro";
 import ListBlog from "./ListBlog.astro";
 // https://docs.astro.build/en/guides/imports/#import-type-utilities
-const data = import.meta.glob<MarkdownInstance<Frontmatter>>("../pages/blog/*.md", { eager: true });
+const data = import.meta.glob<MarkdownInstance<Frontmatter>>(
+  "../pages/blog/*.md",
+  { eager: true },
+);
 
-const posts:Posts[] = Object.values(data).map((post) => {
+const posts: Posts[] = Object.values(data).map((post) => {
   return { ...post.frontmatter, url: post.url };
 });
 ---
