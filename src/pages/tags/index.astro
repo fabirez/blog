@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import type { Frontmatter, Posts } from "../lib/types.ts";
+import type { MarkdownInstance } from "astro";
+
+const data = import.meta.glob<MarkdownInstance<Frontmatter>>("../blog/*.md", {
+  eager: true,
+});
+const posts: Posts[] = Object.values(data).map((post) => {
+  return post.frontmatter;
+});
+const uniqueTags: string[] = [...new Set(posts.map((post) => post.genre))];
+
+---
+
+<BaseLayout pageTitle="All Tags">
+<section class="mt-20 w-full">
+  <h1> All the tags: </h1>
+  <ul>
+    {uniqueTags.map((tag) => 
+    <li>
+      <a href={`/tags/${tag}`}> {tag} </a>
+    </li>
+    )}
+  </ul>
+</section> 
+</BaseLayout>

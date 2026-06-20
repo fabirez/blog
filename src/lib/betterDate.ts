@@ -1,4 +1,4 @@
-function betterMonth(month:string) {
+function betterMonth(month: string) {
   /*
    * @param {string} month
    *	in the following format MM
@@ -34,7 +34,7 @@ function betterMonth(month:string) {
   }
 }
 
-export function betterDate(d:string) {
+export function betterDate(d: string) {
   /*
    * @param {string} [d]ate
    *	in the following format DD/MM/YYYY

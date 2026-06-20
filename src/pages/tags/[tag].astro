@@ -1,28 +1,59 @@
 ---
+import type { Frontmatter, Posts } from "../lib/types.ts";
+import type { MarkdownInstance } from "astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ListBlog from "../../components/ListBlog.astro";
+import {SITE_TITLE} from "../../lib/site.ts"
 
+// Require for dynamic paths
+// https://docs.astro.build/en/guides/routing/#static-ssg-mode
 export async function getStaticPaths() {
-  return [
-    {
+  const data = import.meta.glob<MarkdownInstance<Frontmatter>>("../blog/*.md", {
+    eager: true,
+  });
+  const posts: Posts[] = Object.values(data).map((post) => {
+    return { ...post.frontmatter, url: post.url };
+  });
+  const uniqueTags: string[] = [...new Set(posts.map((post) => post.genre))];
+
+  return uniqueTags.map((tag) => {
+    return {
       params: {
-        tag: "general",
+        tag,
       },
-    },
-    {
-      params: {
-        tag: "courses",
-      },
-    },
-    {
-      params: {
-        tag: "ossu",
-      },
-    }
-  ];
+      props: {
+        posts
+      }
+    };
+  });
 }
 
-
-const {tag} = Astro.params;
+const { tag } = Astro.params;
+const { posts } = Astro.props;
 ---
-<BaseLayout pageTitle={tag}>
-  <p>Posts tagged with {tag}</p>
+
+<BaseLayout pageTitle={SITE_TITLE + " " + tag}>
+<section class="mt-20 w-full">
+  <ul role="list" class="flex w-fit flex-col gap-20 pl-4">
+    {
+      posts.filter((post) => post.genre === tag).map((post) => (
+        <li>
+          <ListBlog post={post} />
+        </li>
+      ))
+    }
+  </ul>
+</section>
 </BaseLayout>
+
+
+
+
+
+
+
+
+
+
+
+

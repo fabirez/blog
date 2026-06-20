@@ -4,11 +4,11 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 :root {
-  --foreground:rgb(0,0,0);
+  --foreground: rgb(0, 0, 0);
 }
 
 .dark {
-  --foreground:rbg(255,255,255);
+  --foreground: rbg(255, 255, 255);
 }
 
 @theme {

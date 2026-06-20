@@ -1,8 +1,8 @@
 type Author = "caffeine*";
 type Genre = "courses" | "general";
 interface Resources {
-  [key:string]: string;
-};
+  [key: string]: string;
+}
 
 export interface Frontmatter {
   layout: string;
@@ -15,5 +15,5 @@ export interface Frontmatter {
 }
 
 export interface Posts extends Frontmatter {
-  url:string;
+  url: string;
 }

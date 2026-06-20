@@ -8,6 +8,7 @@ resources:
   - courseLink: https://learning.edx.org/course/course-v1:UBCx+SPD1x+2T2015/home
   - borrLink: https://borr.dev/computer-science/#core-cs
 ---
+
 ### What is it ?
 
 It's simple one of the best courses i ever took.
