@@ -1,7 +1,7 @@
 type Theme = "dark" | "light";
 
-const moon = document.querySelector("#moon");
-const sun = document.querySelector("#sun");
+const moon = document.querySelector("#moon") as HTMLSpanElement;
+const sun = document.querySelector("#sun") as HTMLSpanElement;
 
 const theme: Theme = (() => {
   if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
@@ -23,26 +23,8 @@ if (theme === "light") {
 
 window.localStorage.setItem("theme", theme);
 
-const handleToggleClick = () => {
-  const element = document.documentElement;
-  element.setAttribute(
-    "data-theme",
-    element.getAttribute("data-theme") === "dark" ? "light" : "dark",
-  );
 
-  const isDark = element.getAttribute("data-theme");
-  window.localStorage.setItem("theme", isDark === "dark" ? "dark" : "light");
-
-  if (isDark !== "dark") {
-    sun.setAttribute("data-current", "");
-    moon.removeAttribute("data-current");
-  } else {
-    moon.setAttribute("data-current", "");
-    sun.removeAttribute("data-current");
-  }
-};
-
-moon.addEventListener("click", function () {
+moon.addEventListener("click", function() {
   const element = document.documentElement;
 
   if (element.getAttribute("data-theme") === "dark") {
@@ -55,7 +37,7 @@ moon.addEventListener("click", function () {
   }
 });
 
-sun.addEventListener("click", function () {
+sun.addEventListener("click", function() {
   const element = document.documentElement;
 
   if (element.getAttribute("data-theme") === "light") {
