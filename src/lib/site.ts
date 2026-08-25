@@ -1,2 +1,2 @@
 export const SITE_TITLE = "caffeine*";
-// !!! export const SITE_DESCRIPTION 
+// !!! export const SITE_DESCRIPTION

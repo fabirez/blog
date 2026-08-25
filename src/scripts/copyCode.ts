@@ -12,14 +12,17 @@ document.querySelectorAll("pre").forEach((pre) => {
 
   btnCopy.textContent = "copy";
   btnCopy.addEventListener("click", function () {
-    let onlyCode = pre.querySelector("code").textContent;
-    setClipboard(onlyCode);
+    let onlyCode = pre.querySelector("code")?.textContent;
+    // TODO: handle in case cannot get the content of the pre
+    // Add a feedback for the user
+    if (!onlyCode) return;
+    setClipboard(onlyCode).catch((err) => console.error(err));
   });
 
   pre.append(btnCopy);
 });
 
-async function setClipboard(text: string) {
+async function setClipboard(text: string): Promise<undefined> {
   const type = "text/plain";
   const clipboardItemData = {
     [type]: text,

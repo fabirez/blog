@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: "Systematic Program Design"
 description: "When I first started learning to code, everything felt chaotic — so many things to think about, so many ways to do the same thing. But then I stumbled upon a systematic approach to programming that changed the way I view code."
 genre: "courses"

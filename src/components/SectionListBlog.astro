@@ -1,22 +1,18 @@
 ---
-import type { Frontmatter, Posts } from "../lib/types.ts";
-import type { MarkdownInstance } from "astro";
+import { getCollection } from "astro:content";
 import ListBlog from "./ListBlog.astro";
-// https://docs.astro.build/en/guides/imports/#import-type-utilities
-const data = import.meta.glob<MarkdownInstance<Frontmatter>>(
-  "../pages/blog/*.md",
-  { eager: true },
-);
 
-const posts: Posts[] = Object.values(data).map((post) => {
-  return { ...post.frontmatter, url: post.url };
+const posts = await getCollection("blog");
+
+const postProps = posts.map((p) => {
+  return { ...p.data, url: p.id };
 });
 ---
 
 <section class="mt-20 w-full">
   <ul role="list" class="flex w-fit flex-col gap-20 pl-4">
     {
-      posts.map((post) => (
+      postProps.map((post) => (
         <li>
           <ListBlog post={post} />
         </li>
