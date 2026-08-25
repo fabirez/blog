@@ -1,19 +1,7 @@
-type Author = "caffeine*";
-type Genre = "courses" | "general";
-interface Resources {
-  [key: string]: string;
-}
-
-export interface Frontmatter {
-  layout: string;
+export interface Post {
   title: string;
   description: string;
-  author: Author;
-  genre: Genre;
+  genre: string;
   pubDate: string;
-  resources: Resources[];
-}
-
-export interface Posts extends Frontmatter {
   url: string;
 }

@@ -6,6 +6,7 @@
   --font-sans: "Inter", "sans-serif";
   --color-background: hsl(0 0% 100%);
   --color-foreground: hsl(0 0% 0%);
+  --color-accent: hsl(203 78% 54%);
   --color-para-blog: hsl(220 6% 20%);
   --color-link-blog: hsl(226 71% 40%);
   --color-code-blog: hsl(217 91% 60%);
@@ -76,7 +77,6 @@ h5 {
   @apply mt-0 pl-0;
 }
 
-
 .blog ul {
   @apply mt-8 list-[square] pl-8;
 }
@@ -89,7 +89,6 @@ h5 {
   @apply text-foreground mt-4 pl-3;
 }
 
-
 .blog pre code {
   @apply before:content-[''] after:content-[''];
 }
@@ -98,18 +97,17 @@ h5 {
 }
 
 .blog a:not(.headerLink) {
-  @apply text-foreground font-medium underline decoration-neutral-950/20 dark:decoration-stone-700 underline-offset-4 hover:decoration-3 
+  @apply text-foreground decoration-accent font-medium underline underline-offset-4 hover:decoration-3;
 }
 
 .blog a:not(.headerLink)::after {
-  content:"";
-  display:inline-flex;
-  width:12px; height:12px;
-  background-color:var(--color-foreground);
-  mask: url('/src/assets/arrowLink.svg');
+  content: "";
+  display: inline-flex;
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-foreground);
+  mask: url("/src/assets/arrowLink.svg");
 }
-
-.blog a:not(.
 
 .blog pre {
   @apply relative mt-6 mb-11 max-w-[1024px] rounded-xl p-5 outline-2 -outline-offset-4 outline-gray-600;

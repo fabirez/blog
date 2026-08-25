@@ -23,8 +23,7 @@ if (theme === "light") {
 
 window.localStorage.setItem("theme", theme);
 
-
-moon.addEventListener("click", function() {
+moon.addEventListener("click", function () {
   const element = document.documentElement;
 
   if (element.getAttribute("data-theme") === "dark") {
@@ -37,7 +36,7 @@ moon.addEventListener("click", function() {
   }
 });
 
-sun.addEventListener("click", function() {
+sun.addEventListener("click", function () {
   const element = document.documentElement;
 
   if (element.getAttribute("data-theme") === "light") {

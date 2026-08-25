@@ -4,7 +4,7 @@ import HeaderListBlog from "./HeaderListBlog.astro";
 import BodyListBlog from "./BodyListBlog.astro";
 ---
 
-<a class="flex cursor-pointer flex-col" href={post.url}>
+<a class="flex cursor-pointer flex-col" href={`/${post.url}`}>
   <header>
     <HeaderListBlog post={post} />
   </header>
